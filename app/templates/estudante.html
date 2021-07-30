@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto</title>
+
+    <!-- IMPORT PAGES STATIC -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+    <h1>Produto</h1>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>Estudante</th>
+                <th>Ingresso</th>
+                <th>Nota</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="{% url 'index' %}">{{ estudante.nome }}</a></td>
+                <td>{{ estudante.ingresso }}</td>
+                <td>{{ estudante.nota }}</td>
+                <td>{{ estudante.situacao}}</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

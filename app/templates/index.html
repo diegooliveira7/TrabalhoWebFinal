@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- IMPORT PAGES STATIC -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+    <h1>Estudantes: </h1>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>Estudante</th>
+                <th>Ingresso</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for estudante in estudantes %}
+            <tr>
+                <td><a href="{% url 'estudante' estudante.id %}">{{ estudante.nome }}</a></td>
+                <td>{{ estudante.ingresso }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>
